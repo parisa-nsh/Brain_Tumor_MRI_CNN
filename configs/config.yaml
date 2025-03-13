@@ -1,0 +1,80 @@
+defaults:
+  - _self_
+
+# Data configuration
+data:
+  train_data_dir: "data/train"
+  val_data_dir: "data/val"
+  test_data_dir: "data/test"
+  image_size: [224, 224]
+  batch_size: 32
+  augmentation: true
+  class_names: ["no_tumor", "glioma", "meningioma", "pituitary"]
+
+# Model configuration
+model:
+  model_type: "cnn"
+  input_shape: [224, 224, 3]
+  num_classes: 4
+  dropout_rate: 0.3
+  learning_rate: 0.001
+
+# Training configuration
+training:
+  epochs: 50
+  early_stopping_patience: 10
+  checkpoint_dir: "checkpoints"
+  model_dir: "models"
+  tensorboard_dir: "logs"
+
+# MLflow configuration
+mlflow:
+  tracking_uri: "http://localhost:5000"
+  experiment_name: "brain-tumor-classification"
+
+# Model serving configuration
+serving:
+  host: "0.0.0.0"
+  port: 8000
+  model_path: "models/final_model.h5"
+  batch_size: 1
+
+# Monitoring configuration
+monitoring:
+  drift_detection_interval: 3600  # in seconds
+  metrics_db_uri: "sqlite:///metrics.db"
+  alert_threshold:
+    accuracy: 0.9
+    data_drift: 0.1
+
+# Logging configuration
+logging:
+  version: 1
+  formatters:
+    simple:
+      format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: INFO
+      formatter: simple
+      stream: ext://sys.stdout
+    file:
+      class: logging.FileHandler
+      level: INFO
+      formatter: simple
+      filename: ${hydra:runtime.output_dir}/train.log
+  root:
+    level: INFO
+    handlers: [console, file]
+
+# DVC configuration
+dvc:
+  remote: "s3://your-bucket/path"
+  auto_push: true
+
+# Docker configuration
+docker:
+  registry: "your-registry"
+  image_name: "brain-tumor-classifier"
+  image_tag: "latest" 
