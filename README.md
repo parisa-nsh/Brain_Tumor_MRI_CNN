@@ -33,8 +33,8 @@ The project uses a Convolutional Neural Network (CNN) to classify brain MRI scan
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/brain-tumor-classification.git
-cd brain-tumor-classification
+git clone https://github.com/parisa-nsh/Brain_Tumor_MRI_CNN.git
+cd Brain_Tumor_MRI_CNN
 ```
 
 2. Create a virtual environment:
@@ -91,4 +91,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Original Kaggle notebook by Jay Kumar
 - Brain Tumor MRI dataset
-- TensorFlow team and community 
+- TensorFlow team and community
