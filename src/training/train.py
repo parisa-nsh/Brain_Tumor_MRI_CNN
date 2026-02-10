@@ -1,3 +1,14 @@
+"""
+© 2026 Parisa Nouri
+
+This source code is provided for viewing and evaluation purposes only.
+Commercial use, modification, or redistribution is prohibited.
+
+Licensed under CC BY-NC-ND 4.0.
+"""
+
+
+
 import os
 import sys
 import hydra
