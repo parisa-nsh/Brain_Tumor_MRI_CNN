@@ -1,3 +1,18 @@
+
+
+## ⚠️ License & Usage Notice
+
+This repository is shared **for viewing and evaluation purposes only**.
+
+❌ Commercial use is prohibited  
+❌ Modification, redistribution, or derivative works are not permitted  
+
+All rights reserved by the author.
+
+For licensing or commercial inquiries, please contact the repository owner.
+
+
+
 # Brain Tumor MRI Classification MLOps Project
 
 This project implements an end-to-end MLOps pipeline for brain tumor MRI classification using TensorFlow and modern MLOps practices.
